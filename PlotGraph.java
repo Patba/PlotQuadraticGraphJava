@@ -15,14 +15,14 @@ public class PlotGraph extends JComponent {
         //XY Axis
         Graphics2D drawXY = (Graphics2D) g;
         RenderingHints hints = new RenderingHints(
-                RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON
+                RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON //antialiasing for XY axis
         );
         drawXY.setRenderingHints(hints);
         drawXY.setColor(Color.WHITE);
         drawXY.setStroke(new BasicStroke(3));
 
-        drawXY.drawLine(0, h,w * 2, h);
-        drawXY.drawLine(w,0, w, h*2);
+        drawXY.drawLine(0, h,w * 2, h); //X axis
+        drawXY.drawLine(w,0, w, h*2); // Y axis
 
         Graphics2D XYstring = (Graphics2D) g;
 
@@ -40,7 +40,7 @@ public class PlotGraph extends JComponent {
 
         for(int x = -300; x <= 300; x++)
         {
-            pointer.addPoint(w + x, h - (10 * x * x + 30 * x + 3)/1000);
+            pointer.addPoint(w + x, h - (10 * x * x + 30 * x + 3)/1000); //Drawing graph in the XY axis
 
         }
         drawGraph.drawPolyline(pointer.xpoints, pointer.ypoints, pointer.npoints);
@@ -57,10 +57,10 @@ public class PlotGraph extends JComponent {
         jf.setLocationRelativeTo(null);
         jf.setVisible(true);
         jf.setTitle("Patryk Barton 12525 C3");
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Zamyka program i przerywa wykonywanie kompilacji
-        jf.getContentPane().setBackground(Color.BLACK); // czarny background
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Closes the compilation after the window is closed
+        jf.getContentPane().setBackground(Color.BLACK); // black background
 
-        PlotGraph graph = new PlotGraph();
+        PlotGraph graph = new PlotGraph(); //ini
         jf.add(graph);
 
 
